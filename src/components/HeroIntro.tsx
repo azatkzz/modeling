@@ -6,7 +6,6 @@ import Image from "next/image"
 
 const locations = [
   { city: "Tokyo", country: "JP", flag: "🇯🇵", color: "bg-red-100 text-red-700 border-red-200" },
-  { city: "Astana", country: "KZ", flag: "🇰🇿", color: "bg-sky-100 text-sky-700 border-sky-200" },
   { city: "San Francisco", country: "US", flag: "🇺🇸", color: "bg-blue-100 text-blue-700 border-blue-200" },
 ]
 
@@ -38,7 +37,7 @@ export function HeroIntro() {
   }
 
   return (
-    <section className="h-screen flex flex-col justify-center px-6 md:px-24 bg-[#FDFCF8] relative overflow-hidden">
+    <section className="h-screen flex flex-col justify-center px-6 md:px-24 bg-white relative overflow-hidden">
       
       {/* Wolf Look Face Photo - Right Side Background */}
       <motion.div
@@ -55,9 +54,9 @@ export function HeroIntro() {
             className="object-cover object-center grayscale contrast-125"
             priority
             />
-            {/* Gradient Mask to fade into background color */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#FDFCF8] via-transparent to-transparent w-full h-full" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#FDFCF8]/20 via-transparent to-[#FDFCF8] h-full" />
+            {            /* Gradient Mask to fade into background color */}
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent w-full h-full" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white h-full" />
         </div>
       </motion.div>
 
@@ -69,80 +68,63 @@ export function HeroIntro() {
           className="flex flex-col items-start"
         >
           {/* Typography Block */}
-          <div className="text-5xl md:text-7xl lg:text-9xl font-serif text-zinc-900 leading-[1.1] tracking-tight mix-blend-multiply">
+          <div className="text-4xl md:text-6xl lg:text-7xl font-serif text-zinc-900 leading-[1.1] tracking-tight mix-blend-multiply">
             <div className="overflow-hidden">
               <motion.div variants={item}>Hello, I'm <span className="italic text-zinc-400 font-light">Azat</span>.</motion.div>
             </div>
 
-            <div className="overflow-hidden mt-2">
+            <div className="mt-2">
                <motion.div variants={item}>
-                 A Model based in
+                 A Growth Engineer based in
                </motion.div>
             </div>
                
-             {/* SLOT MACHINE / CASINO FRAME (On New Line) */}
-            <motion.div 
-              variants={item}
-              className="mt-4 inline-flex"
-            >
+            {/* Animated City Text - Fixed Width Container */}
+            <div className="mt-4 relative">
                <motion.div 
-                 layout
-                 transition={{ duration: 0.5, type: "spring", bounce: 0 }}
-                 className="relative overflow-hidden bg-white rounded-full border border-zinc-200 shadow-[inset_0_2px_4px_rgba(0,0,0,0.05)] px-6 py-2"
+                 variants={item}
+                 className="relative inline-block"
+                 style={{ width: "850px", maxWidth: "95vw" }}
                >
-                  <div className="relative flex items-center justify-center">
+                  <div style={{ overflow: "visible" }}>
                     <AnimatePresence mode="popLayout" initial={false}>
                       <motion.div
                         key={index}
-                        initial={{ y: "100%", filter: "blur(8px)", opacity: 0 }}
+                        initial={{ y: "-100%", filter: "blur(8px)", opacity: 0 }}
                         animate={{ y: "0%", filter: "blur(0px)", opacity: 1 }}
-                        exit={{ y: "-100%", filter: "blur(8px)", opacity: 0 }}
+                        exit={{ y: "100%", filter: "blur(8px)", opacity: 0 }}
                         transition={{ 
                           type: "spring", 
                           stiffness: 140, 
                           damping: 18,
                           mass: 1
                         }}
-                        className="flex items-center gap-4 whitespace-nowrap"
+                        className="flex items-center gap-3 whitespace-nowrap"
                       >
-                        {/* City Name */}
-                        <span className="font-serif italic text-4xl md:text-6xl lg:text-7xl text-zinc-900 leading-none pb-1">
+                        {/* City Name with Letter Spacing */}
+                        <span 
+                          className="font-serif italic font text-4xl md:text-6xl lg:text-7xl text-zinc-400 leading-none"
+                          style={{ letterSpacing: "0.02em" }}
+                        >
                           {locations[index].city}
                         </span>
 
-                        {/* Casino Chip / Flag Badge */}
-                        <div className={`flex items-center gap-2 px-3 py-1 md:px-4 md:py-2 rounded-full border ${locations[index].color} shadow-sm self-center mt-1`}>
-                          <span className="text-xl md:text-3xl filter drop-shadow-sm leading-none">{locations[index].flag}</span>
-                          <span className="text-xs md:text-base font-bold font-sans tracking-widest leading-none">{locations[index].country}</span>
-                        </div>
+                        {/* Flag */}
+                        <span className="text-4xl md:text-6xl lg:text-7xl leading-none">{locations[index].flag}</span>
                       </motion.div>
                     </AnimatePresence>
                   </div>
-                  
-                  {/* Shine/Glass Reflection Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent pointer-events-none rounded-full" />
                </motion.div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Description */}
-          <motion.p variants={item} className="mt-16 text-lg md:text-xl text-zinc-500 font-sans font-light max-w-lg leading-relaxed ml-1 mix-blend-multiply">
-            Specializing in editorial, runway, and commercial modeling. 
-            Available for direct booking worldwide.
+          <motion.p variants={item} className="mt-16 text-base md:text-lg text-zinc-500 font-sans font-light max-w-lg leading-relaxed ml-1 mix-blend-multiply">
+            20-year-old growth engineer from Kazakhstan, driving 0→1 and 1→100 growth. 
+            Specialized in go-to-market strategy, product marketing, and growth operations.
           </motion.p>
 
-          {/* Scroll CTA */}
-          <motion.div variants={item} className="mt-12 ml-1">
-            <button 
-              onClick={() => {
-                document.getElementById('project-stack')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-              className="group flex items-center gap-3 text-xs md:text-sm font-bold font-sans tracking-[0.2em] uppercase text-zinc-900 hover:text-zinc-600 transition-colors"
-            >
-              <span className="w-8 h-[1px] bg-zinc-900 group-hover:w-12 transition-all duration-300" />
-              <span>Scroll Projects</span>
-            </button>
-          </motion.div>
+          
 
         </motion.div>
       </div>

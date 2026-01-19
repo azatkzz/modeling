@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function AboutPage() {
   return (
-    <main className="bg-[#FDFCF8] min-h-screen pt-24 pb-24 px-6 md:px-12">
+    <main className="bg-white min-h-screen pt-24 pb-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
         
         {/* Left Column - Image */}
@@ -24,47 +24,47 @@ export default function AboutPage() {
 
             <div className="space-y-8 text-lg font-sans font-light text-zinc-600 leading-relaxed max-w-xl">
                <p>
-                 I am a model from Kazakhstan with international experience across the United States and Japan, currently based in Tokyo. My work spans commercial, lifestyle, and promotional campaigns, collaborating with both global and regional brands.
+                 I'm a 20-year-old growth engineer from Kazakhstan, currently based in San Francisco. I specialize in building 0→1 and scaling 1→100, with expertise in go-to-market strategy, product marketing, and growth operations.
                </p>
                
                <p>
-                 I have partnered with major companies including <a href="https://www.instagram.com/allur.kz/" target="_blank" rel="noopener noreferrer" className="text-zinc-900 font-medium underline decoration-zinc-300 underline-offset-4 hover:text-blue-600 hover:decoration-blue-600 transition-all">Allur Auto</a>, <a href="https://www.instagram.com/hyundaikz/" target="_blank" rel="noopener noreferrer" className="text-zinc-900 font-medium underline decoration-zinc-300 underline-offset-4 hover:text-blue-600 hover:decoration-blue-600 transition-all">Hyundai Kazakhstan</a>, <a href="https://www.instagram.com/p/CvXVLAng-TR/" target="_blank" rel="noopener noreferrer" className="text-zinc-900 font-medium underline decoration-zinc-300 underline-offset-4 hover:text-blue-600 hover:decoration-blue-600 transition-all">Yandex</a> (Kazakhstan division), and <a href="https://www.instagram.com/argymaq/" target="_blank" rel="noopener noreferrer" className="text-zinc-900 font-medium underline decoration-zinc-300 underline-offset-4 hover:text-blue-600 hover:decoration-blue-600 transition-all">Argymaq</a>.
+                 I've worked with global organizations including <span className="text-zinc-900 font-medium">Adobe</span>, <span className="text-zinc-900 font-medium">Ernst & Young</span>, <span className="text-zinc-900 font-medium">UN Population Fund</span>, <span className="text-zinc-900 font-medium">UN Women</span>, and <span className="text-zinc-900 font-medium">Eurasian Resources Group</span>.
                </p>
 
                <p>
-                 In addition to commercial work, I participated in <a href="https://www.instagram.com/sanfranciscofashionweek/" target="_blank" rel="noopener noreferrer" className="text-zinc-900 font-medium underline decoration-zinc-300 underline-offset-4 hover:text-blue-600 hover:decoration-blue-600 transition-all">San Francisco Fashion Week 2024</a>, gaining runway experience in an international fashion environment.
+                 Most recently, I led go-to-market strategy at Surfaice, closing a $180K annual contract with JD Sports and securing $500K in investment. At Adobe, I redesigned the internal Life App serving 30K employees with 95% satisfaction rate.
                </p>
 
                <p>
-                 With a global background and adaptability across markets, I bring a versatile, professional presence to each project.
+                 I'm currently pursuing a B.S. in Computer Science & Business at Minerva University with concentrations in AI and Marketing, while actively seeking internships in growth, GTM, and marketing roles.
                </p>
             </div>
 
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-y-8 gap-x-12 mt-16 pt-16 border-t border-zinc-200">
                <div>
-                  <span className="block text-xs uppercase tracking-widest text-zinc-400 mb-1">Height</span>
-                  <span className="text-xl font-serif text-zinc-900">188 cm</span>
+                  <span className="block text-xs uppercase tracking-widest text-zinc-400 mb-1">Location</span>
+                  <span className="text-xl font-serif text-zinc-900">San Francisco, CA</span>
                </div>
                <div>
-                  <span className="block text-xs uppercase tracking-widest text-zinc-400 mb-1">Chest</span>
-                  <span className="text-xl font-serif text-zinc-900">95 cm</span>
+                  <span className="block text-xs uppercase tracking-widest text-zinc-400 mb-1">Age</span>
+                  <span className="text-xl font-serif text-zinc-900">20</span>
                </div>
                <div>
-                  <span className="block text-xs uppercase tracking-widest text-zinc-400 mb-1">Waist</span>
-                  <span className="text-xl font-serif text-zinc-900">73 cm</span>
+                  <span className="block text-xs uppercase tracking-widest text-zinc-400 mb-1">Education</span>
+                  <span className="text-xl font-serif text-zinc-900">Minerva University</span>
                </div>
                <div>
-                  <span className="block text-xs uppercase tracking-widest text-zinc-400 mb-1">Hips</span>
-                  <span className="text-xl font-serif text-zinc-900">93 cm</span>
+                  <span className="block text-xs uppercase tracking-widest text-zinc-400 mb-1">Focus</span>
+                  <span className="text-xl font-serif text-zinc-900">Growth & GTM</span>
                </div>
                <div>
-                  <span className="block text-xs uppercase tracking-widest text-zinc-400 mb-1">Shoes</span>
-                  <span className="text-xl font-serif text-zinc-900">44 EU</span>
+                  <span className="block text-xs uppercase tracking-widest text-zinc-400 mb-1">Email</span>
+                  <span className="text-xl font-serif text-zinc-900">Available</span>
                </div>
                <div>
-                  <span className="block text-xs uppercase tracking-widest text-zinc-400 mb-1">Eyes</span>
-                  <span className="text-xl font-serif text-zinc-900">Brown</span>
+                  <span className="block text-xs uppercase tracking-widest text-zinc-400 mb-1">LinkedIn</span>
+                  <span className="text-xl font-serif text-zinc-900">Connect</span>
                </div>
             </div>
 

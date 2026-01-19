@@ -8,34 +8,34 @@ import { ArrowLeft, ArrowRight, MousePointer2 } from "lucide-react"
 
 const creativeProjects = [
   {
-    title: "Black & White",
-    subtitle: "Studio Series",
+    title: "Education Consulting",
+    subtitle: "Personal Project",
     image: "/project1/565ED403-69BA-474C-A6F7-6BC62A183CAA_1_201_a.jpeg",
-    slug: "bw-studio"
+    slug: "education-consulting"
   },
   {
-    title: "Street Style",
-    subtitle: "Urban Aesthetics",
+    title: "Networking Events",
+    subtitle: "Event Organization",
     image: "/project2/9B44860C-1EB0-4C61-A539-4DBA6A435771.jpeg",
-    slug: "street-style"
+    slug: "networking-events"
   },
   {
-    title: "P Level",
-    subtitle: "Concrete Jungle",
+    title: "Economics Olympiad",
+    subtitle: "Bronze Medal",
     image: "/project3/D238BCC9-DFDE-4A0B-BEA8-ADCD7B4CE6C5_1_105_c.jpeg",
-    slug: "underground-parking"
+    slug: "economics-olympiad"
   },
   {
-    title: "Astana Autumn",
-    subtitle: "Golden Hour",
+    title: "NASA Space Apps",
+    subtitle: "1st Place",
     image: "/ project4/IMG_1584.JPG",
-    slug: "astana-autumn"
+    slug: "nasa-space-apps"
   },
   {
-    title: "Almaty Downtown",
-    subtitle: "Urban Walk",
+    title: "Minerva University",
+    subtitle: "Education",
     image: "/project5/IMG_9962.JPG",
-    slug: "almaty-downtown"
+    slug: "minerva-university"
   },
 ]
 
@@ -88,10 +88,10 @@ export function CreativeShowcase() {
           <div className="shrink-0 w-[80vw] md:w-[30vw] flex flex-col justify-center pl-6 md:pl-12">
              <span className="text-xs font-sans font-bold tracking-widest text-zinc-500 mb-4 block">02</span>
              <h2 className="text-5xl md:text-7xl font-serif text-white mb-6">
-                Creative <br /> <span className="italic text-zinc-500">& TFP</span>
+                Projects <br /> <span className="italic text-zinc-500">& Awards</span>
              </h2>
              <p className="text-sm font-sans text-zinc-400 max-w-[250px] leading-relaxed">
-                Experimental shoots, personal projects, and artistic collaborations.
+                Personal initiatives, achievements, and educational background.
              </p>
           </div>
 

@@ -26,10 +26,11 @@ export default async function ProjectPage({
   const nextProject = projects[(projectIndex + 1) % projects.length]
   const prevProject = projects[(projectIndex - 1 + projects.length) % projects.length]
 
-  const isCreative = project.category === "Creative"
+  const isCreative = project.category === "Projects" || project.category === "Awards" || project.category === "Education"
+  const hasMetrics = 'metrics' in project && project.metrics && project.metrics.length > 0
 
   return (
-    <main className="bg-[#FDFCF8] min-h-screen">
+    <main className="bg-white min-h-screen">
       
       {/* Back Button */}
       <div className={`fixed top-8 left-6 md:left-12 z-50 mix-blend-difference ${isCreative ? 'text-white' : 'text-white'}`}>
@@ -56,43 +57,58 @@ export default async function ProjectPage({
                 </div>
             </div>
          ) : (
-             /* Commercial Project Hero - With Shared Layout Animation */
+             /* Commercial Project Hero - With Zoom Animation */
              <motion.div 
-                layoutId={`card-container-${project.slug}`}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="w-full h-full relative"
+                initial={{ scale: 0.5, borderRadius: "24px" }}
+                animate={{ scale: 1, borderRadius: "0px" }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="w-full h-full relative overflow-hidden"
              >
                  <motion.div 
-                    layoutId={`image-${project.slug}`}
-                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    initial={{ scale: 1.5 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
                     className="w-full h-full relative"
                  >
-                    <Image
-                        src={project.coverImage}
-                        alt={project.title}
-                        fill
-                        className="object-cover"
-                        priority
-                    />
+                    <motion.div
+                        initial={{ filter: 'blur(30px)' }}
+                        animate={{ filter: 'blur(8px)' }}
+                        transition={{ duration: 0.7, ease: "easeOut" }}
+                        className="w-full h-full"
+                    >
+                        <Image
+                            src={project.coverImage}
+                            alt={project.title}
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                    </motion.div>
                  </motion.div>
-                 <div className="absolute inset-0 bg-black/20" />
+                 <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    className="absolute inset-0 bg-black/30" 
+                 />
                  
-                 <div className="absolute bottom-0 left-0 w-full p-6 md:p-12 text-white z-20">
+                 <motion.div 
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                    className="absolute bottom-0 left-0 w-full p-6 md:p-12 text-white z-20"
+                 >
                     <div className="max-w-7xl mx-auto">
-                        <motion.h1 
-                            layoutId={`title-${project.slug}`}
-                            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                            className="text-5xl md:text-7xl lg:text-9xl font-serif mb-4 leading-none"
-                        >
+                        <h1 className="text-5xl md:text-7xl lg:text-9xl font-serif mb-4 leading-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
                             {project.title}
-                        </motion.h1>
-                        <div className="flex flex-col md:flex-row gap-4 md:gap-12 text-sm font-sans tracking-widest uppercase opacity-90">
+                        </h1>
+                        <div className="flex flex-col md:flex-row gap-4 md:gap-12 text-sm font-sans tracking-widest uppercase opacity-90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                             <span>{project.year}</span>
                             <span>{project.category}</span>
                             <span>{project.tag}</span>
                         </div>
                     </div>
-                 </div>
+                 </motion.div>
              </motion.div>
          )}
       </section>
@@ -102,7 +118,25 @@ export default async function ProjectPage({
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24">
               <div className="col-span-1">
-                  <h3 className="text-xs font-sans uppercase tracking-[0.2em] text-zinc-400 mb-8">About the project</h3>
+                  <h3 className="text-xs font-sans uppercase tracking-[0.2em] text-zinc-400 mb-8">
+                    {project.category === "Experience" ? "Role Details" : "About"}
+                  </h3>
+                  
+                  {/* Key Metrics for Experience Projects */}
+                  {hasMetrics && (
+                    <div className="hidden md:block space-y-6">
+                      {project.metrics?.map((metric, idx) => (
+                        <div key={idx} className="border-l-2 border-zinc-200 pl-4">
+                          <span className="block text-xs uppercase tracking-widest text-zinc-400 mb-1">
+                            {metric.label}
+                          </span>
+                          <span className="text-2xl font-serif text-zinc-900">
+                            {metric.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                   
                   {/* Instagram Card in Sidebar */}
                   {project.instagram && (
@@ -112,9 +146,29 @@ export default async function ProjectPage({
                   )}
               </div>
               <div className="col-span-1 md:col-span-2">
-                  <p className="text-xl md:text-2xl font-serif leading-relaxed text-zinc-800 mb-12 mt-12">
-                      {project.description}
-                  </p>
+                  <div className="text-lg md:text-xl font-serif leading-relaxed text-zinc-800 mb-12 mt-12 space-y-4">
+                      {project.description.split('\n\n').map((paragraph, idx) => (
+                        <p key={idx} className={paragraph.startsWith('•') ? 'pl-0' : ''}>
+                          {paragraph}
+                        </p>
+                      ))}
+                  </div>
+                  
+                  {/* Mobile Metrics */}
+                  {hasMetrics && (
+                    <div className="md:hidden grid grid-cols-2 gap-6 mb-12">
+                      {project.metrics?.map((metric, idx) => (
+                        <div key={idx} className="border-l-2 border-zinc-200 pl-4">
+                          <span className="block text-xs uppercase tracking-widest text-zinc-400 mb-1">
+                            {metric.label}
+                          </span>
+                          <span className="text-2xl font-serif text-zinc-900">
+                            {metric.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                   
                   {/* Mobile Instagram Card */}
                   {project.instagram && (
@@ -125,68 +179,70 @@ export default async function ProjectPage({
               </div>
           </div>
 
-          {/* Gallery */}
-          {hasCustomGrid ? (
-             /* Bento Grid Layout for Mixed Sizes - Vertical Focus */
-             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
-                {project.images.map((imgData, idx) => {
-                   const src = typeof imgData === 'string' ? imgData : imgData.src;
-                   const className = typeof imgData === 'object' ? imgData.className : '';
-                   
-                   return (
+          {/* Gallery - Only show for non-Experience projects */}
+          {project.category !== "Experience" && (
+            hasCustomGrid ? (
+               /* Bento Grid Layout for Mixed Sizes - Vertical Focus */
+               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+                  {project.images.map((imgData, idx) => {
+                     const src = typeof imgData === 'string' ? imgData : imgData.src;
+                     const className = typeof imgData === 'object' ? imgData.className : '';
+                     
+                     return (
+                        <motion.div 
+                          key={idx}
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: idx * 0.1 }}
+                          className={clsx("relative rounded-lg overflow-hidden group", className, 
+                            // Default to span 1 col
+                            !className.includes('col-span') && "col-span-1",
+                            // Allow row-span items to stretch naturally to cover their grid area
+                            className.includes('row-span') && "h-full min-h-[400px]",
+                            // Allow regular items to have auto height, but apply h-full to the second item in the Smoking Astana grid to match edges
+                            !className.includes('row-span') && (idx === 1 && project.slug === 'smoking-astana' ? "h-full" : "aspect-auto h-auto")
+                          )}
+                        >
+                            <Image
+                                src={src}
+                                alt={`${project.title} - ${idx + 1}`}
+                                width={800}
+                                height={1200}
+                                className={clsx(
+                                  "w-full group-hover:scale-105 transition-transform duration-700",
+                                  // If it's the specific case where we force h-full, we need object-cover to fill it
+                                  (className.includes('row-span') || (idx === 1 && project.slug === 'smoking-astana')) ? "h-full object-cover" : "h-auto",
+                                  className.includes('object-top') && "object-top"
+                                )}
+                            />
+                        </motion.div>
+                     )
+                  })}
+               </div>
+            ) : (
+               /* Standard Masonry Layout */
+               <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+                  {project.images.map((img, idx) => (
                       <motion.div 
                         key={idx}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.1 }}
-                        className={clsx("relative rounded-lg overflow-hidden group", className, 
-                          // Default to span 1 col
-                          !className.includes('col-span') && "col-span-1",
-                          // Allow row-span items to stretch naturally to cover their grid area
-                          className.includes('row-span') && "h-full min-h-[400px]",
-                          // Allow regular items to have auto height, but apply h-full to the second item in the Smoking Astana grid to match edges
-                          !className.includes('row-span') && (idx === 1 && project.slug === 'smoking-astana' ? "h-full" : "aspect-auto h-auto")
-                        )}
+                        className="relative w-full break-inside-avoid rounded-lg overflow-hidden"
                       >
                           <Image
-                              src={src}
+                              src={img as string}
                               alt={`${project.title} - ${idx + 1}`}
                               width={800}
                               height={1200}
-                              className={clsx(
-                                "w-full group-hover:scale-105 transition-transform duration-700",
-                                // If it's the specific case where we force h-full, we need object-cover to fill it
-                                (className.includes('row-span') || (idx === 1 && project.slug === 'smoking-astana')) ? "h-full object-cover" : "h-auto",
-                                className.includes('object-top') && "object-top"
-                              )}
+                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
                           />
                       </motion.div>
-                   )
-                })}
-             </div>
-          ) : (
-             /* Standard Masonry Layout */
-             <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-                {project.images.map((img, idx) => (
-                    <motion.div 
-                      key={idx}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: idx * 0.1 }}
-                      className="relative w-full break-inside-avoid rounded-lg overflow-hidden"
-                    >
-                        <Image
-                            src={img as string}
-                            alt={`${project.title} - ${idx + 1}`}
-                            width={800}
-                            height={1200}
-                            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
-                        />
-                    </motion.div>
-                ))}
-             </div>
+                  ))}
+               </div>
+            )
           )}
 
       </section>

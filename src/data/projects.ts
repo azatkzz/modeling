@@ -1,147 +1,113 @@
 export const projects = [
   {
-    slug: "kaidarova-ethnic",
-    title: "Kaidarova Ethnic",
-    year: "2023",
-    category: "Commercial",
-    tag: "@kaidarova.ethnic",
-    instagram: {
-      username: "kaidarova.ethnic",
-      avatar: "/kaidarova/klogo.png", 
-      bio: "Kaidarova | Atelier\nShopping & retail\n🇰🇿 Стилизуем этнику\n• Авторские принты",
-      followers: "140K",
-      following: "6",
-      posts: "1,845",
-      url: "https://www.instagram.com/kaidarova.ethnic?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-    },
-    description: "A visually striking campaign for Kaidarova Ethnic, exploring the intersection of traditional motifs and modern silhouettes. The collection highlights the rich texture of heritage fabrics reinterpreted for the contemporary wardrobe.",
-    coverImage: "/kaidarova/IMG_3242.jpeg",
-    images: [
-      "/kaidarova/IMG_3242.jpeg",
-      "/kaidarova/FA288AAC-70E5-4378-B4E7-F33C3B0ECB79_1_105_c.jpeg",
-      "/kaidarova/2F3C08AA-A414-4522-BB8A-B8E73BBA848D_1_105_c.jpeg",
-      "/kaidarova/DFB23518-7596-4EA6-B6C7-0007D6883E99_1_105_c.jpeg",
-      "/kaidarova/ECE8D4FE-8D0B-467A-A7AD-E002D231868E_1_105_c.jpeg",
-      "/kaidarova/image.png",
-      "/kaidarova/EDE005FA-B136-4E62-B495-B9DAFF70715E_1_105_c.jpeg",
-      "/kaidarova/5B40E9C5-C040-40E3-82E6-57B0289DA93C_1_105_c.jpeg",
-      "/kaidarova/D8DBF45F-8AA8-4D4D-8FD1-FF7018309F87_1_105_c.jpeg"
-    ],
-    color: "#E5E5E5"
+    slug: "surfaice-gtm",
+    title: "Surfaice",
+    year: "2025",
+    category: "Experience",
+    tag: "Go-to-Market Manager",
+    description: "• Closed $180K annual contract with JD Sports int'l retailer & converted 50 U.S. retail brands ($10B+ construction budget) into pilot negotiations by building 600+ prospect database, executing targeted email outreach & co-leading sales demos with CDO.\n\n• Secured $500K investment by managing VC outreach via LinkedIn, converting 25 interested VCs from 1,000 cold leads.\n\n• Secured Top 3 recognition among 485 startups across 27 countries & earned invitation to TechCrunch Battlefield 200, world's prestigious startup competition, by leading multi-round pitch qualification rounds.\n\n• Facilitated B2G contract with Kazakhstan on social infrastructure addressing 500-school/270K-seat gap, by developing pitch decks for government, participating in briefings with Ministry of Digitalization & Ministry of Construction.\n\n• Grew LinkedIn reach by positioning CDO as an industry thought leader, driving 97K+ impressions (+283%), 1.4K+ engagements (+237%), and 1.1K+ new followers (+12%) in six months through storytelling and targeted content strategy.",
+    coverImage: "/front pics/IMG_9525.JPG",
+    images: ["/front pics/IMG_9525.JPG"],
+    color: "#E5E5E5",
+    metrics: [
+      { label: "ARR Closed", value: "$180K" },
+      { label: "Investment Secured", value: "$500K" },
+      { label: "Startups Ranked", value: "Top 3/485" },
+      { label: "LinkedIn Growth", value: "+283%" }
+    ]
   },
   {
-    slug: "cntrl-culture",
-    title: "CNTRL Culture",
-    year: "2023",
-    category: "Commercial",
-    tag: "@cntrl.culture",
-    instagram: {
-      username: "cntrl.culture",
-      avatar: "/cntrl.culture/FB8CC802-9FFD-4CF1-9C36-781ACFEE8E1F_1_105_c.jpeg",
-      bio: "Vintage Brand\nKazakhstan 🇰🇿\nCurated vintage selection.",
-      followers: "12.5K",
-      following: "45",
-      posts: "120",
-      url: "https://www.instagram.com/cntrl.culture"
-    },
-    description: "A nostalgic journey through curated vintage fashion with CNTRL Culture. This campaign captures the raw, authentic essence of street style in Kazakhstan, blending retro aesthetics with modern attitude.",
-    coverImage: "/cntrl.culture/cvr.png",
-    images: [
-      { src: "/cntrl.culture/FB8CC802-9FFD-4CF1-9C36-781ACFEE8E1F_1_105_c.jpeg", className: "md:col-span-2 md:row-span-2" }, // Big Hero
-      { src: "/cntrl.culture/58B6C735-73A1-4DB4-A57B-672E8F068E69_1_105_c.jpeg", className: "md:col-span-1" },
-      { src: "/cntrl.culture/1EC0874B-6451-4AE2-9786-3733CA95E5A9_1_105_c.jpeg", className: "md:col-span-1" },
-      { src: "/cntrl.culture/8D3B2D19-824F-4546-8B2C-F384526A31AB_1_105_c.jpeg", className: "md:col-span-1" }, // Wide maybe?
-      { src: "/cntrl.culture/741401C7-136B-4F5A-9233-1D1DA0ECA999_1_105_c.jpeg", className: "md:col-span-1" },
-      { src: "/cntrl.culture/8A33F965-34C1-422F-8583-8600C7CBF1C9_1_105_c.jpeg", className: "md:col-span-1 md:row-span-2" }, // Tall
-      { src: "/cntrl.culture/A00E8E30-0DE5-441F-B61E-74B058C045B1_1_105_c.jpeg", className: "md:col-span-1" },
-      { src: "/cntrl.culture/5ED44C0D-C91F-4B87-A2D1-5B912A3A9363_1_105_c.jpeg", className: "md:col-span-1" }
-    ],
-    color: "#D1D5DB"
+    slug: "adobe-product",
+    title: "Adobe",
+    year: "2024-2025",
+    category: "Experience",
+    tag: "Product Management Intern",
+    description: "• Achieved 95% satisfaction rate on redesigned Adobe Life App serving 30K employees by launching AI gamification features & habit loops based on behavioral analysis.\n\n• Built Next.js prototype with engagement features validated through A/B testing & 7 behavioral interviews.\n\n• Led cross-functional team of 5 sprints (engineering, research, UX/UI) using Agile methodologies via Miro/Notion.",
+    coverImage: "/front pics/adobe3.jpeg",
+    images: ["/front pics/adobe3.jpeg"],
+    color: "#D1D5DB",
+    metrics: [
+      { label: "Satisfaction Rate", value: "95%" },
+      { label: "Users Served", value: "30K" },
+      { label: "Team Size", value: "5" },
+      { label: "A/B Tests", value: "7+" }
+    ]
   },
   {
-    slug: "iskrit-co",
-    title: "Iskrit Co.",
-    year: "2023",
-    category: "Jewelry",
-    tag: "@iskrit.co",
-    instagram: {
-      username: "iskrit.co",
-      avatar: "/Iskrit.co/iskrit logo.png",
-      bio: "Custom Jewelry Brand.\nCrafting pieces for artists across Eastern Europe & Central Asia.\nUnique designs, premium quality.",
-      followers: "8.5K",
-      following: "120",
-      posts: "85",
-      url: "https://www.instagram.com/iskrit.co"
-    },
-    description: "A premier custom jewelry brand known for collaborating with top hip-hop artists across Eastern Europe and Central Asia. This project showcases bold, bespoke pieces that define the visual identity of modern rap culture.",
-    coverImage: "/Iskrit.co/48DC4C32-62C7-4084-8A0C-ECB927266B38_1_105_c.jpeg",
-    images: [
-      "/Iskrit.co/48DC4C32-62C7-4084-8A0C-ECB927266B38_1_105_c.jpeg",
-      "/Iskrit.co/3F69D4A6-0736-49EB-8FB5-E46F0FC587C0_1_105_c.jpeg",
-      "/Iskrit.co/990430B6-66DC-4D83-818B-DBB7B1BAB0B5_1_105_c.jpeg",
-      "/Iskrit.co/155C7E15-EAA0-4BD8-85FD-E64E20EE9D1C_1_105_c.jpeg",
-      "/Iskrit.co/BDD47A9D-E530-42C4-9F4D-55A6CD258624_1_105_c.jpeg",
-      "/Iskrit.co/874AE837-74B4-4508-B9E7-5A9DA020E8F2_1_105_c.jpeg"
-    ],
-    color: "#A3A3A3"
-  },
-  {
-    slug: "smoking-astana",
-    title: "Smoking Astana",
+    slug: "puzzle-strategy",
+    title: "Puzzle Strategy",
     year: "2024",
-    category: "Commercial",
-    tag: "@prokat.alfasmoking.astana",
-    instagram: {
-      username: "prokat.alfasmoking.astana",
-      avatar: "/smoking.astana/lg2.png",
-      bio: "АРЕНДА/ПРОДАЖА СМОКИНГОВ\n📍Астана, ул. Сыганак 10\n📞 +7 701 555 55 55\nСамый большой выбор смокингов в Астане.",
-      followers: "35.2K",
-      following: "45",
-      posts: "890",
-      url: "https://www.instagram.com/prokat.alfasmoking.astana/"
-    },
-    description: "A sophisticated campaign for the largest smoking atelier in Astana, Kazakhstan. This project highlights the timeless elegance of classic black-tie attire, featuring premium tuxedos tailored for the modern gentleman.",
-    coverImage: "/smoking.astana/IMG_9314.JPG",
-    images: [
-      { src: "/smoking.astana/IMG_9314.JPG", className: "md:col-span-1" },
-      { src: "/smoking.astana/IMG_9316.JPG", className: "md:col-span-1" },
-      { src: "/smoking.astana/IMG_9318.JPG", className: "md:col-span-1" },
-      { src: "/smoking.astana/IMG_9315.JPG", className: "md:col-span-1" },
-    ],
-    color: "#18181B"
+    category: "Experience",
+    tag: "Product Marketing Manager",
+    description: "• Generated $60K revenue in 2 months with 30% conversion rate by creating Whatsapp outreach sequences, cold calling & landing page optimization for Agency's B2B/B2C scaling course for entrepreneurs.\n\n• Increased 20 clients' revenue by 23% through Instagram content audits, & performance marketing campaign restructuring.\n\n• Drove 20K followers, 14K leads & 66% conversion for language center using organic Instagram content marketing & automated lead nurturing in communication channels.",
+    coverImage: "/front pics/IMG_5594.JPG",
+    images: ["/front pics/IMG_5594.JPG"],
+    color: "#A3A3A3",
+    metrics: [
+      { label: "Revenue Generated", value: "$60K" },
+      { label: "Conversion Rate", value: "30%" },
+      { label: "Followers Grown", value: "20K" },
+      { label: "Lead Conversion", value: "66%" }
+    ]
   },
   {
-    slug: "torre-astana",
-    title: "TOR'RE",
-    year: "2024",
-    category: "Commercial",
-    tag: "@torre.astana",
-    instagram: {
-      username: "torre_astana",
-      avatar: "/torre/tr.png",
-      bio: "TOR'RE Astana,\nTrademark Collection by Wyndham\nYes, apart-hotel\n📍Astana, Kazakhstan",
-      followers: "8.2K",
-      following: "15",
-      posts: "145",
-      url: "https://www.instagram.com/torre_astana/"
-    },
-    description: "A lifestyle campaign for TOR'RE Astana, Trademark Collection by Wyndham. The shoot captures the modern, elevated living experience of this premium apart-hotel, blending architectural lines with contemporary fashion.",
-    coverImage: "/torre/IMG_1161.JPG",
-    images: [
-      { src: "/torre/IMG_1161.JPG", className: "md:col-span-1" },
-      { src: "/torre/IMG_1162.JPG", className: "md:col-span-1" },
-      { src: "/torre/IMG_1164.JPG", className: "md:col-span-1" },
-      { src: "/torre/IMG_1202.JPG", className: "md:col-span-1" }
-    ],
-    color: "#A1A1AA"
-  },
-  {
-    slug: "bw-studio",
-    title: "Black & White",
+    slug: "ikigai-bizdev",
+    title: "Ikigai Restaurants",
     year: "2023",
-    category: "Creative",
-    tag: "Studio Series",
-    description: "An experimental studio session focusing on light, shadow, and form. This series explores the raw emotion and timeless aesthetic of black and white photography.",
+    category: "Experience",
+    tag: "Business Development Manager",
+    description: "• Reduced operational costs by $2K/month & boosted order efficiency 25% by developing QR digital ordering system on Python.\n\n• Increased order values by 12% through usability testing & A/B experiments optimizing checkout UX.\n\n• Managed 4 cross-functional teams using Agile sprints for on-time feature rollout & iteration, ensuring timely project delivery.",
+    coverImage: "/front pics/cafe.png",
+    images: ["/front pics/cafe.png"],
+    color: "#18181B",
+    metrics: [
+      { label: "Cost Reduction", value: "$2K/mo" },
+      { label: "Efficiency Boost", value: "+25%" },
+      { label: "Order Value Increase", value: "+12%" },
+      { label: "Teams Managed", value: "4" }
+    ]
+  },
+  {
+    slug: "ey-employer-brand",
+    title: "Ernst & Young",
+    year: "2022",
+    category: "Experience",
+    tag: "Employer Brand & HR Communications",
+    description: "• Built recruitment funnel generating 470+ registrations for EY Campus Program by establishing partnerships with 22 schools & 10 universities for program's expansion across Central Asia.\n\n• Engaged 3,000+ students by Junior Ambassador Program launch, driving brand awareness & talent pipeline development.",
+    coverImage: "/front pics/Gemini_Generated_Image_ojbvwnojbvwnojbv.png",
+    images: ["/front pics/Gemini_Generated_Image_ojbvwnojbvwnojbv.png"],
+    color: "#A1A1AA",
+    metrics: [
+      { label: "Registrations", value: "470+" },
+      { label: "School Partnerships", value: "22" },
+      { label: "University Partners", value: "10" },
+      { label: "Students Engaged", value: "3K+" }
+    ]
+  },
+  {
+    slug: "alibary-growth",
+    title: "Alibary Marketing",
+    year: "2021-2022",
+    category: "Experience",
+    tag: "Growth & Marketing Manager",
+    description: "• Scaled TikTok media project to 15M+ views by developing content strategy based on trend analysis and user behavior, growing audience from 0 to 16K followers with 1.2M engagements in 4 months.\n\n• Secured $65K in funding and partnerships by creating data-driven pitch decks showing user growth metrics, onboarding 8 brand partners with campaigns achieving 38% average engagement lift.",
+    coverImage: "/project5/IMG_9962.JPG",
+    images: ["/project5/IMG_9962.JPG"],
+    color: "#18181B",
+    metrics: [
+      { label: "Total Views", value: "15M+" },
+      { label: "Followers Grown", value: "16K" },
+      { label: "Funding Secured", value: "$65K" },
+      { label: "Brand Partners", value: "8" }
+    ]
+  },
+  {
+    slug: "education-consulting",
+    title: "Education Consulting Agency",
+    year: "Ongoing",
+    category: "Projects",
+    tag: "Personal Project - Founder",
+    description: "Founded education consulting agency helping students with college admissions. Providing comprehensive guidance on applications, essays, and university selection to maximize acceptance rates at top institutions.",
     coverImage: "/project1/565ED403-69BA-474C-A6F7-6BC62A183CAA_1_201_a.jpeg",
     images: [
       "/project1/565ED403-69BA-474C-A6F7-6BC62A183CAA_1_201_a.jpeg",
@@ -152,12 +118,12 @@ export const projects = [
     color: "#000000"
   },
   {
-    slug: "street-style",
-    title: "Street Style",
-    year: "2023",
-    category: "Creative",
-    tag: "Urban Aesthetics",
-    description: "Capturing the raw energy of the city. This series focuses on spontaneous moments, architectural backdrops, and the interplay between fashion and the urban environment.",
+    slug: "networking-events",
+    title: "Event Organization",
+    year: "Ongoing",
+    category: "Projects",
+    tag: "Personal Project - Organizer",
+    description: "Organizing high-quality networking events for professionals, entrepreneurs, and students. Creating meaningful connections and fostering community growth through curated gatherings and workshops.",
     coverImage: "/project2/9B44860C-1EB0-4C61-A539-4DBA6A435771.jpeg",
     images: [
       "/project2/9B44860C-1EB0-4C61-A539-4DBA6A435771.jpeg",
@@ -169,12 +135,12 @@ export const projects = [
     color: "#52525B"
   },
   {
-    slug: "underground-parking",
-    title: "P Level",
-    year: "2023",
-    category: "Creative",
-    tag: "Concrete Jungle",
-    description: "An edgy, industrial shoot set in the depths of a brutalist parking structure. Exploring shadows, concrete textures, and the isolation of underground spaces.",
+    slug: "economics-olympiad",
+    title: "International Economics Olympiad",
+    year: "2021",
+    category: "Awards",
+    tag: "Bronze Medal",
+    description: "Achieved Bronze Medal at the International Economics Olympiad, competing against top high school students from around the world. Demonstrated exceptional analytical and problem-solving skills in economics.",
     coverImage: "/project3/D238BCC9-DFDE-4A0B-BEA8-ADCD7B4CE6C5_1_105_c.jpeg",
     images: [
       "/project3/D238BCC9-DFDE-4A0B-BEA8-ADCD7B4CE6C5_1_105_c.jpeg",
@@ -186,12 +152,12 @@ export const projects = [
     color: "#27272A"
   },
   {
-    slug: "astana-autumn",
-    title: "Astana Autumn",
-    year: "2023",
-    category: "Creative",
-    tag: "Golden Hour",
-    description: "Capturing the golden hues and crisp atmosphere of Astana in autumn. A series focused on warm tones, natural light, and the changing seasons.",
+    slug: "nasa-space-apps",
+    title: "NASA Space Apps Hackathon",
+    year: "2022",
+    category: "Awards",
+    tag: "1st Place - Silicon Valley",
+    description: "Won 1st place at NASA Space Apps Hackathon in Silicon Valley, the world's largest global hackathon. Developed innovative space-tech solution among hundreds of competing teams from around the world.",
     coverImage: "/ project4/IMG_1584.JPG",
     images: [
       "/ project4/IMG_1584.JPG",
@@ -201,18 +167,18 @@ export const projects = [
     color: "#CA8A04"
   },
   {
-    slug: "almaty-downtown",
-    title: "Almaty Downtown",
-    year: "2024",
-    category: "Creative",
-    tag: "Urban Walk",
-    description: "A casual yet stylish walk through the heart of Almaty. Mixing modern architecture with street life energy.",
-    coverImage: "/project5/IMG_9962.JPG",
+    slug: "minerva-university",
+    title: "Minerva University",
+    year: "2024-2028",
+    category: "Education",
+    tag: "B.S. Computer Science & Business",
+    description: "Pursuing Bachelor's degree in Computer Science & Business with concentrations in AI and Marketing. Part of a global cohort studying across 7 cities worldwide, with focus on experiential learning and real-world applications.",
+    coverImage: "/torre/IMG_1202.JPG",
     images: [
-      "/project5/IMG_9962.JPG",
-      "/project5/IMG_0445.JPG",
-      "/project5/IMG_9961.JPG",
-      "/project5/IMG_9959.JPG"
+      "/torre/IMG_1202.JPG",
+      "/torre/IMG_1161.JPG",
+      "/torre/IMG_1162.JPG",
+      "/torre/IMG_1164.JPG"
     ],
     color: "#18181B"
   }
